@@ -4,24 +4,31 @@
  * @author gaurav-dogra
  */
 public class Piece {
-    private int x;
-    private int y;
+    private int row;
+    private int column;
 
-    /**
-     * @param x denotes the row
-     * @param y denotes the column
-     */
-    public Piece(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Piece(int row, int column) {
+        this.row = row;
+        this.column = column;
     }
 
-    public int getX() {
-        return x;
+    public Piece() {
     }
 
-    public int getY() {
-        return y;
+    public int getRow() {
+        return row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
     }
 
     @Override
@@ -34,16 +41,16 @@ public class Piece {
         }
         Piece parameter = (Piece) obj;
 
-        return this.getX() == parameter.getX() && this.getY() == parameter.getY();
+        return this.getRow() == parameter.getRow() && this.getColumn() == parameter.getColumn();
     }
 
     @Override
     public int hashCode() {
-        return x*31+y;
+        return row *31+ column;
     }
 
     @Override
     public String toString() {
-        return "("+x+", "+y+")";
+        return "("+ row +", "+ column +")";
     }
 }
